@@ -27,6 +27,11 @@ Route::group(['middleware' => 'jwt.auth'], function () {
 	Route::post('/v1/updateUser','UserController@updateUser');
 });
 
+Route::get('/disease','DiseaseController@getDisease');
+Route::post('/updateDiseaseCount','DiseaseController@insertDisease');
+Route::post('/addUser','DiseaseController@addUser');
+Route::post('/getStates','DiseaseController@getStates');
+Route::post('/getCities','DiseaseController@getCities');
 
 Route::get('/user', function (Request $request) {
     return $request->user();
