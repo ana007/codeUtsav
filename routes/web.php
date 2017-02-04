@@ -22,8 +22,8 @@
     Route::get('/login', 'Admin\AuthController@getSignInPage'); 
     Route::post('/postSignIn', 'Admin\AuthController@postSignIn'); 
                  
-    Route::get('/', 'HomeController@index');
        
+    Route::get('/', 'Admin\AuthController@getSignInPage'); 
 
     Route::group(['prefix' => 'admin', 'middleware' => 'web'], function () 
     { 
@@ -50,8 +50,9 @@
         	 Route::get('{diseases}/confirm-delete', array('as' => 'code.confirm-delete', 'uses' => 'Admin\PomocodeController@getModalDelete'));
     	  });
 
+        Route::get('/display', 'Admin\DisplayController@index'); 
 
-
+        Route::get('/verify', 'Admin\VerifyController@index'); 
 
     });
 

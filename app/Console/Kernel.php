@@ -13,11 +13,6 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        Commands\ResetCoinCron::class,
-        Commands\LeaderboardCron::class,
-        Commands\UniqueBidCron::class,
-        Commands\ResetCron::class,
-        Commands\LeaderboardCronOnce::class,
     ];
 
     /**
@@ -32,11 +27,6 @@ class Kernel extends ConsoleKernel
         //          ->hourly();
         //$schedule->command('resetCoin:cron')
         //          ->cron('0 */2 * * * *');
-        $schedule->command('reset:cron')
-                  ->dailyAt('00:00');
-        $schedule->command('leaderboard_once:cron')
-                  ->dailyAt('00:00');
-
     }
 
     /**

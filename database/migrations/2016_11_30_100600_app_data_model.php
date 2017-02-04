@@ -19,5 +19,6 @@ class AppDataModel extends Migration
             $table->increments('id');
             $table->string('code')->unique()->comment('ye hai disease name');
             $table->timestamps();
-        });   
+        });  
+    }     
 }

@@ -2,7 +2,7 @@
 
 @section('header')
 
-<link type="text/css" rel="stylesheet" href="/css/font-awesome.css">
+<link type="text/css" rel="stylesheet" href="css/font-awesome.css">
     <link type="text/css" rel="stylesheet" href="/css/material-design-iconic-font.css">
     <link type="text/css" rel="stylesheet" href="/css/bootstrap.css">
     <link type="text/css" rel="stylesheet" href="/css/animate.css">
@@ -32,14 +32,15 @@
 <div class="page-header filled full-block light">
     <div class="row">
         <div class="col-md-6 col-sm-6">
-            <!-- <h2>Dashboard</h2> -->
-            
+            <!-- <h2>Dashboard</h2>
+            <p>Raipur Plus Admin Panel</p> -->
         </div>
         <div class="col-md-6 col-sm-6">
             <ul class="list-page-breadcrumb">
                 <li class="active-page"></li>
                 <li><a href="{{ URL::to('admin') }}">Dashboard <i class="zmdi zmdi-chevron-right"></i></a></li>
-                <li class="active-page"><a href="{{ URL::to('admin/disease') }}">Diseases List</a></li>
+                <li class="active-page"><a href="{{ URL::to('admin/code') }}">PromoCodes<i class="zmdi zmdi-chevron-right"></i></a></li>
+                <li class="active-page">Search</li>
             </ul>
         </div>
     </div>
@@ -54,13 +55,13 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="widget-header">
-                                        <h3>Diseases List</h3>
+                                        <h3>Promo Code List</h3>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="data-align-right">
                                         <!-- <a href="#clear" class="clear-filter btn btn-link" title="clear filter">Clear Filter</a> -->
-                                        <a href="{{ URL::to('admin/diseases/create') }}" class="btn add-row btn-primary">Add Disease</a>
+                                        <a href="{{ URL::to('admin/code/create') }}" class="btn add-row btn-primary">Add New</a>
                                     </div>
                                 </div>
                             </div>
@@ -70,8 +71,8 @@
                                 <div class="col-md-6 col-sm-6">
                                     <div class="row">
                                         <div class="col-md-6 col-sm-6">
-                                           
-                                           {!! Form::open(['method'=>'GET','url'=>URL::to('admin/diseases/search'),'role'=>'search'])  !!}
+                                            <span class="tfh-label">Search: </span>
+                                           {!! Form::open(['method'=>'GET','url'=>URL::to('admin/code/search'),'role'=>'search'])  !!}
  
                                     <input class="form-control" type="text" id="search" name="search" placeholder="Search here">
                             {!! Form::close() !!}
@@ -94,27 +95,20 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="table-responsive">
                         <table class="table foo-data-table-filterable" data-filter="#filter" data-filter-text-only="true" data-page-size="5" data-limit-navigation="3">
                             <thead>
                             <tr>
                                 <th data-sort-ignore="true">
-                                    S.No
+                                    Diseases
                                 </th>
-                                <th data-sort-ignore="true">
-                                    Disease Name
-                                </th>
-                              
-                                <th  data-sort-ignore="true" >Action</th>
+                                <th  data-sort-ignore="true" data-hide="phone"></th>
                             </tr>
                             </thead>
                             <tbody>
                             @foreach ($codes as $code)
                                 <tr>
-                                    <td>{{ $code->id }}</td>
-                                    <td>{{ $code->code }}</td>                                    
-                                    
-                                    <td class="td"><a class="row-edit" href="{{{ URL::to('admin/diseases/' . $code->id . '/edit' ) }}}"><span class="zmdi zmdi-edit"></span></a> <a href="{{{ URL::to('admin/diseases/' . $code->id . '/delete' ) }}}" onclick="return confirm('Are you sure you want to delete this code?');"><span class="zmdi zmdi-hc-lg zmdi-delete"></span></a></td>
+                                    <td>{{ $code->code }}</td>
+                                    <td class="td-right"><a class="row-edit" href="{{{ URL::to('admin/diseases/' . $code->id . '/edit' ) }}}"><span class="zmdi zmdi-edit"></span></a> <a href="{{{ URL::to('admin/diseases/' . $code->id . '/delete' ) }}}" onclick="return confirm('Are you sure you want to delete this code?');"><span class="zmdi zmdi-hc-lg zmdi-delete"></span></a></td>
                                 </tr>
                             @endforeach
                             </tbody>
@@ -126,8 +120,7 @@
                             </tr>
                             </tfoot>
                         </table>
-                        {{ $codes->links('vendor.pagination.bootstrap-4') }}
-                        </div>
+                        {!! $codes->appends(Request::all())->render('vendor.pagination.bootstrap-4') !!}
                     </div>
                 </div>
             </div>
@@ -173,7 +166,3 @@
 <script src="/js/apps.js"></script>
 
 @endsection
- 
- 
-               
-               

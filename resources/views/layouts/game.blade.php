@@ -74,7 +74,7 @@
         <div class="row">
             <div class="col-md-6 col-sm-6">
                 <div class="footer-left">
-                    <span>© 2016 <a href="http://raipurplus.com/" style="text-decoration: none; color: #e97005;"><b>Raipur Plus</b></a></span>
+                    <span>©  <a style="text-decoration: none; color: #e97005;"><b>House Number 4</b></a></span>
                 </div>
             </div>
         </div>

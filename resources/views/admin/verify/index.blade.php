@@ -31,15 +31,17 @@
 @section('content')
 <div class="page-header filled full-block light">
     <div class="row">
-        <div class="col-md-6 col-sm-6">
+        <div class="col-md-6 col-sm-8">
             <!-- <h2>Dashboard</h2> -->
             
+        <h4>Select location in which you want to view rumours</h4>
+                                    
         </div>
         <div class="col-md-6 col-sm-6">
             <ul class="list-page-breadcrumb">
                 <li class="active-page"></li>
                 <li><a href="{{ URL::to('admin') }}">Dashboard <i class="zmdi zmdi-chevron-right"></i></a></li>
-                <li class="active-page"><a href="{{ URL::to('admin/disease') }}">Diseases List</a></li>
+                <li class="active-page"><a href="{{ URL::to('admin/disease') }}">Verify Disease</a></li>
             </ul>
         </div>
     </div>
@@ -52,20 +54,40 @@
                     <div class="widget-content">
                         <div class="data-action-bar">
                             <div class="row">
-                                <div class="col-md-6">
+                                <div class="col-md-3 ">
                                     <div class="widget-header">
-                                        <h3>Diseases List</h3>
+                                        <h3>Choose Region</h3>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="data-align-right">
+                                <div class="dropdown col-md-3">
+                                     <button class="btn btn-primary dropdown-toggle " type="button" data-toggle="dropdown">Select State
+                                     <span class="caret"></span></button>
+                                        <ul class="dropdown-menu">
+                                          <li><a >HTML</a></li>
+                                          <li><a >CSS</a></li>
+                                          <li><a >JavaScript</a></li>
+                                        </ul>
+                                      </div>
+                                      <div class="dropdown col-md-3">
+                                         <button class="btn btn-primary dropdown-toggle " type="button" data-toggle="dropdown">Select State
+                                         <span class="caret"></span></button>
+                                            <ul class="dropdown-menu">
+                                              <li><a href="#">HTML</a></li>
+                                              <li><a href="#">CSS</a></li>
+                                              <li><a href="#">JavaScript</a></li>
+                                            </ul>
+                                      </div>
+
+                                <div class="col-md-3">
+                                    <div class="data-align">
                                         <!-- <a href="#clear" class="clear-filter btn btn-link" title="clear filter">Clear Filter</a> -->
-                                        <a href="{{ URL::to('admin/diseases/create') }}" class="btn add-row btn-primary">Add Disease</a>
+                                        <a href="{{ URL::to('admin/diseases/create') }}" class="btn add-row btn-primary">Search</a>
+                                    </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="table-filter-header">
+                        <!-- <div class="table-filter-header">
                             <div class="row">
                                 <div class="col-md-6 col-sm-6">
                                     <div class="row">
@@ -80,7 +102,7 @@
                                 </div>
                                 <div class="col-md-6 col-sm-6">
                                     <div class="row">
-                                        <!-- <div class="col-md-4 col-sm-4 col-md-offset-8 col-sm-offset-8">
+                                        <div class="col-md-4 col-sm-4 col-md-offset-8 col-sm-offset-8">
                                             <span class="tfh-label">Data: </span>
                                             <select id="change-page-size" class=" form-control">
                                                 <option>Filter</option>
@@ -89,46 +111,12 @@
                                                 <option value="5">5</option>
                                                 <option value="10">10</option>
                                             </select>
-                                        </div> -->
+                                        </div> 
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="table-responsive">
-                        <table class="table foo-data-table-filterable" data-filter="#filter" data-filter-text-only="true" data-page-size="5" data-limit-navigation="3">
-                            <thead>
-                            <tr>
-                                <th data-sort-ignore="true">
-                                    S.No
-                                </th>
-                                <th data-sort-ignore="true">
-                                    Disease Name
-                                </th>
-                              
-                                <th  data-sort-ignore="true" >Action</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            @foreach ($codes as $code)
-                                <tr>
-                                    <td>{{ $code->id }}</td>
-                                    <td>{{ $code->code }}</td>                                    
-                                    
-                                    <td class="td"><a class="row-edit" href="{{{ URL::to('admin/diseases/' . $code->id . '/edit' ) }}}"><span class="zmdi zmdi-edit"></span></a> <a href="{{{ URL::to('admin/diseases/' . $code->id . '/delete' ) }}}" onclick="return confirm('Are you sure you want to delete this code?');"><span class="zmdi zmdi-hc-lg zmdi-delete"></span></a></td>
-                                </tr>
-                            @endforeach
-                            </tbody>
-                            <tfoot class="hide-if-no-paging">
-                            <tr>
-                                <td colspan="6" class="footable-visible">
-                                    <div class="pagination pagination-centered"></div>
-                                </td>
-                            </tr>
-                            </tfoot>
-                        </table>
-                        {{ $codes->links('vendor.pagination.bootstrap-4') }}
-                        </div>
-                    </div>
+                        </div> -->
+                    
                 </div>
             </div>
         </div>

@@ -3,7 +3,7 @@
         <div class="user-profile-container">
             <div class="user-profile clearfix">
                 <div class="admin-user-thumb">
-                    <img src="/images/icon.png" alt="admin">
+                    <img src="/images/icon.png" style="border-radius: 10px" alt="admin">
                 </div>
                 <div class="admin-user-info">
                     <ul>
@@ -45,14 +45,14 @@
             </li>
             
             <li>
-                <a href="#"><i class="fa fa-gamepad"></i><span class="list-label">See Spread</span></a>
+                <a href="#"><i class="fa fa-gamepad"></i><span class="list-label">See Rumours</span></a>
                 <ul>
-                    <li><a href="{{ URL::to('admin/game') }}">Display</a></li>
+                    <li><a href="{{ URL::to('admin/display') }}">Display</a></li>
                 </ul>
             </li>
 
             <li>
-                <a href="{{ URL::to('admin/game') }}"><i class="fa fa-gamepad"></i><span class="list-label">Verify</span></a>
+                <a href="{{ URL::to('admin/verify') }}"><i class="fa fa-gamepad"></i><span class="list-label">Verify</span></a>
             </li>
           
           
