@@ -11,6 +11,7 @@ class PromoCode extends Model
      protected $table = "promo_codes";
 
      protected $fillable = [
-        'code'
+        'code',
+        'description'
     ];
 }

@@ -99,16 +99,27 @@
                             <thead>
                             <tr>
                                 <th data-sort-ignore="true">
-                                    Diseases
+                                    Disease
                                 </th>
-                                <th  data-sort-ignore="true" data-hide="phone"></th>
+                                
+                                <th data-sort-ignore="true">
+                                    Location
+                                </th>
+                                <th data-sort-ignore="true">
+                                    Count
+                                </th>
+                                <th data-sort-ignore="true">
+                                    Action
+                                </th>
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach ($codes as $code)
+                            @foreach ($diseasedata as $data)
                                 <tr>
-                                    <td>{{ $code->code }}</td>
-                                    <td class="td-right"><a class="row-edit" href="{{{ URL::to('admin/diseases/' . $code->id . '/edit' ) }}}"><span class="zmdi zmdi-edit"></span></a> <a href="{{{ URL::to('admin/diseases/' . $code->id . '/delete' ) }}}" onclick="return confirm('Are you sure you want to delete this code?');"><span class="zmdi zmdi-hc-lg zmdi-delete"></span></a></td>
+                                    <td>{{ $data->code }}</td>
+                                    <td>{{$city_name[0]->name}}</td>
+                                    <td>{{ $data->code}}</td>
+                                    <td><a href="/admin/update/{{$data->id}}" class="btn add-row btn-primary">Verify</a></td>
                                 </tr>
                             @endforeach
                             </tbody>
@@ -120,7 +131,7 @@
                             </tr>
                             </tfoot>
                         </table>
-                        {!! $codes->appends(Request::all())->render('vendor.pagination.bootstrap-4') !!}
+                      
                     </div>
                 </div>
             </div>

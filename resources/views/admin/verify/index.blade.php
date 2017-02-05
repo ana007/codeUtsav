@@ -59,34 +59,40 @@
                                         <h3>Choose Region</h3>
                                     </div>
                                 </div>
-                                <div class="dropdown col-md-3">
-                                     <button class="btn btn-primary dropdown-toggle " type="button" data-toggle="dropdown">Select State
-                                     <span class="caret"></span></button>
-                                        <ul class="dropdown-menu">
-                                          <li><a >HTML</a></li>
-                                          <li><a >CSS</a></li>
-                                          <li><a >JavaScript</a></li>
-                                        </ul>
-                                      </div>
-                                      <div class="dropdown col-md-3">
-                                         <button class="btn btn-primary dropdown-toggle " type="button" data-toggle="dropdown">Select State
-                                         <span class="caret"></span></button>
-                                            <ul class="dropdown-menu">
-                                              <li><a href="#">HTML</a></li>
-                                              <li><a href="#">CSS</a></li>
-                                              <li><a href="#">JavaScript</a></li>
-                                            </ul>
-                                      </div>
-
+                                <div class="dropdown col-md-6">
+                                     <select id="state" onchange="getState(this)">
+                                        
+                                        
+                                        @if(isset($statename))  
+                                            <option value = {{$statename[0]->id}}><?php echo $statename[0]->name ?></option>
+                                        @else
+                                            <option >Select State</option>
+                                            @foreach ($var as $value) 
+                                                <option value = {{$value->id}}>{{$value->name}}</option>
+                                            @endforeach
+                                        @endif
+                                    </select>
+                                         
+                                      
+                                      <select id="city">
+                                        <option >Select City</option>
+                                        @if(isset($statename))  
+                                        @foreach ($city_name as $value) 
+                                                <option value = {{$value->id}}>{{$value->name}}</option>
+                                            @endforeach
+                                        @endif
+                                       </select>     
+                                    </div>
                                 <div class="col-md-3">
                                     <div class="data-align">
                                         <!-- <a href="#clear" class="clear-filter btn btn-link" title="clear filter">Clear Filter</a> -->
-                                        <a href="{{ URL::to('admin/diseases/create') }}" class="btn add-row btn-primary">Search</a>
+                                        <div class="btn add-row btn-primary" onclick="search()">Search</div>
                                     </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        
                         <!-- <div class="table-filter-header">
                             <div class="row">
                                 <div class="col-md-6 col-sm-6">
@@ -163,5 +169,33 @@
 @endsection
  
  
-               
+<script type="text/javascript">
+    function getState(state)
+    {
+        var url = 'verify/'+ state.value;
+        window.location=url;
+    }
+    function search()
+    {
+        var e = document.getElementById("state");
+        var strstate = e.options[e.selectedIndex].value;
+        if(strstate=='Select State')
+            alert('Please choose region ');
+        else 
+            {
+            var e = document.getElementById("city");
+            var strcity = e.options[e.selectedIndex].value;
+            if(strcity=='Select City')
+                {
+                    var url = 'state/'+ strstate;
+                    window.location=url;
+                }
+            else
+                {
+                    var url = 'city/'+ strcity;
+                window.location=url;
+                }
+            }
+    }
+</script>        
                

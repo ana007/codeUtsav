@@ -98,17 +98,29 @@
                         <table class="table foo-data-table-filterable" data-filter="#filter" data-filter-text-only="true" data-page-size="5" data-limit-navigation="3">
                             <thead>
                             <tr>
+                            <th data-sort-ignore="true">
+                                    S.No
+                                </th>
                                 <th data-sort-ignore="true">
                                     Diseases
                                 </th>
-                                <th  data-sort-ignore="true" data-hide="phone"></th>
+                                <th  data-sort-ignore="true" >
+                                    Description
+                                </th>
+                                <th  data-sort-ignore="true" >
+                                    Action
+                                </th>
                             </tr>
+                            
                             </thead>
                             <tbody>
                             @foreach ($codes as $code)
                                 <tr>
+                                    <td>{{ $code->id}}</td>
                                     <td>{{ $code->code }}</td>
-                                    <td class="td-right"><a class="row-edit" href="{{{ URL::to('admin/diseases/' . $code->id . '/edit' ) }}}"><span class="zmdi zmdi-edit"></span></a> <a href="{{{ URL::to('admin/diseases/' . $code->id . '/delete' ) }}}" onclick="return confirm('Are you sure you want to delete this code?');"><span class="zmdi zmdi-hc-lg zmdi-delete"></span></a></td>
+                                    <td>{{ $code->description }}</td>
+
+                                    <td class="td"><a class="row-edit" href="{{{ URL::to('admin/diseases/' . $code->id . '/edit' ) }}}"><span class="zmdi zmdi-edit"></span></a> <a href="{{{ URL::to('admin/diseases/' . $code->id . '/delete' ) }}}" onclick="return confirm('Are you sure you want to delete this code?');"><span class="zmdi zmdi-hc-lg zmdi-delete"></span></a></td>
                                 </tr>
                             @endforeach
                             </tbody>

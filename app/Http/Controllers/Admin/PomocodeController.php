@@ -24,7 +24,7 @@ class PomocodeController extends Controller
 
           public function index()
 		   {			    
-			    $codes = PromoCode::orderBy('created_at', 'desc') 
+			    $codes = PromoCode::orderBy('id', 'asc') 
 			    ->paginate(5);   
 		   	   return view('admin.code.index',compact('codes'));
 		   }
@@ -82,8 +82,7 @@ class PomocodeController extends Controller
 		public function search(Request $request)
         {
            $search = \Request::get('search');
-           $codes = PromoCode::where('code','like','%'.$search.'%')->paginate(5);
-
+           $codes = PromoCode::where('code','like','%'.$search.'%')->orderBy('id')->paginate(5);
            return view('admin.code.search',compact('codes'));
         }
 }

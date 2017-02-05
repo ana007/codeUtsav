@@ -52,13 +52,23 @@
                             <div class="row">
 
 
-                                <div class="col-md-12 unit">
+                                <div class="col-md-12 unit" style="float:left">
                                     <div class="input">
-                                        <label class="col-md-3" align="right">
-                                            Diseases *
+                                        <label class="col-md-4" align="right">
+                                            Disease Name *
                                         </label>
                                         <div class="col-md-5">
                                             {!! Form::text('code', null, array('class' => 'form-control', 'placeholder'=>'Diseases', 'style'=>'text-transform:uppercase' , 'required'=>'true')) !!}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 unit">
+                                    <div class="input">
+                                        <label class="col-md-4" align="right">
+                                            Disease Description*
+                                        </label>
+                                        <div class="col-md-5">
+                                            {!! Form::text('description', null, array('class' => 'form-control', 'placeholder'=>'Description', 'style'=>'text-transform:uppercase' , 'required'=>'true')) !!}
                                         </div>
                                     </div>
                                 </div>

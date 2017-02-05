@@ -52,7 +52,7 @@
             </li>
 
             <li>
-                <a href="{{ URL::to('admin/verify') }}"><i class="fa fa-gamepad"></i><span class="list-label">Verify</span></a>
+                <a href="{{ URL::to('admin/verify') }}"><i class="fa fa-gamepad"></i><span class="list-label">Verify Rumours</span></a>
             </li>
           
           

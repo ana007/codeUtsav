@@ -51,8 +51,12 @@
     	  });
 
         Route::get('/display', 'Admin\DisplayController@index'); 
-
+        Route::get('display/{serach}','Admin\DisplayController@search'); 
         Route::get('/verify', 'Admin\VerifyController@index'); 
+        Route::get('/verify/{id}', 'Admin\VerifyController@updateState'); 
+        Route::get('/verify/state/{id}','Admin\VerifyController@state'); 
+        Route::get('/verify/city/{id}','Admin\VerifyController@city');
+        Route::get('/update/{id}','Admin\UpdateController@update');
 
     });
 

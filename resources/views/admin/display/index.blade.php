@@ -44,7 +44,101 @@
         </div>
     </div>
 </div>
-     
+     <div class="row">
+        <div class="col-md-12">
+            <div class="widget-wrap material-table-widget">
+
+                <div class="widget-container margin-top-0">
+                    <div class="widget-content">
+                        <div class="data-action-bar">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="widget-header">
+                                        <h3>Rumours Statistics</h3>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="table-filter-header">
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6">
+                                    <div class="row">
+                                        <div class="col-md-6 col-sm-6">
+                                            <span class="tfh-label">Search Rumours: </span>
+                                           {!! Form::open(['method'=>'GET','url'=>URL::to('admin/display/search'),'role'=>'search'])  !!}
+ 
+                                    <input class="form-control" type="text" id="search" name="search" placeholder="Search here">
+                            {!! Form::close() !!}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6">
+                                    <div class="row">
+                                        <!-- <div class="col-md-4 col-sm-4 col-md-offset-8 col-sm-offset-8">
+                                            <span class="tfh-label">Data: </span>
+                                            <select id="change-page-size" class=" form-control">
+                                                <option>Filter</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="5">5</option>
+                                                <option value="10">10</option>
+                                            </select>
+                                        </div> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <table class="table foo-data-table-filterable" data-filter="#filter" data-filter-text-only="true" data-page-size="5" data-limit-navigation="3">
+                            <thead>
+                            <tr>
+                                <th data-sort-ignore="true">
+                                    Diseases
+                                </th>
+                                
+                                <th data-sort-ignore="true">
+                                    Location
+                                </th>
+                                <th data-sort-ignore="true">
+                                    Rumours Spread
+                                </th>
+                                <th data-sort-ignore="true">
+                                    Action
+                                </th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @foreach ($diseasedata as $data)
+                                <tr>
+                                    <td>{{ $data->code }}</td>
+                                    <td>{{$data->name}}</td>
+                                    <td>{{ $data->count}}</td>
+                                    <td>
+                                         @if($data->flag ==1 )
+                                            <img src="../../images/verified.png" width="20px" height="20px">Verified
+                                        @else
+                                            <img src="../../images/unverified.png" width="18px" height="18px">
+
+                                            Not Verified
+                                            @endif
+                                    </td>
+                                </tr>
+                            @endforeach
+                            </tbody>
+                            <tfoot class="hide-if-no-paging">
+                            <tr>
+                                <td colspan="6" class="footable-visible">
+                                    <div class="pagination pagination-centered"></div>
+                                </td>
+                            </tr>
+                            </tfoot>
+                        </table>
+                      
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 		   
 @endsection
 
