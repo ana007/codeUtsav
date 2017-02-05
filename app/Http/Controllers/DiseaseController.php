@@ -13,7 +13,7 @@ class DiseaseController extends Controller {
 	public function getDisease() {
 
 
-			$disease = DB::table('promo_codes')->select('id','code')->get();
+			$disease = DB::table('promo_codes')->select('id','code','description')->get();
 
 			return  response()->json(['success'=>true ,'message'=> "Success",'data'=> $disease]); 
             
@@ -24,33 +24,43 @@ class DiseaseController extends Controller {
 
 		$input = $request->json()->all();
 
-		$disease = $input['disease'];
-		$city = $input['city'];
+		$disease_id = $input['disease'];
+		$city_id = $input['city'];
+		$user_id = $input['user'];
 		
-		$cit = DB::table('cities')->select('id')->where('name',$city)->first();
-		$dis = DB::table('promo_codes')->select('id')->where('code',$disease)->first();
 
-		$city_id = $cit->id;
-		$disease_id = $dis->id;
+		$isPresent = DB::table('spread')->select('id')->where('locality_id',$city_id)->where('disease_id',$disease_id)->first();
 
-		$isPresent = DB::table('spread')->select('id')->where('city_id',$city_id)->where('disease_id',$disease_id)->first();
+		$isUpdated = DB::table('user_record')->select('id')->where('user_id',$user_id)->where('disease_id',$disease_id)->first();
 
-		if($isPresent == null) {
+		if($isUpdated == null) {
 
-			DB::table('spread')->insert(['city_id' =>  $city_id,
+			DB::table('user_record')->insert(['user_id' =>  $user_id,
+                                         'disease_id' =>  $disease_id]);
+
+			if($isPresent == null) {
+
+				DB::table('spread')->insert(['locality_id' =>  $city_id,
                                          'disease_id' =>  $disease_id,
                                          'count' => 1]);
+
+			}
+
+			else {
+
+				DB::table('spread')
+            	->where('locality_id', $city_id)
+            	->where('disease_id',$disease_id)
+            	->increment('count');
+			}
+
+			return  response()->json(['success'=>true ,'message'=> "Success"]); 
 
 		}
 
 		else {
-
-			DB::table('spread')
-            ->where('city_id', $city_id)
-            ->where('disease_id',$disease_id)
-            ->increment('count');
+			return  response()->json(['success'=>false ,'message'=> "Already Submitted"]); 
 		}
-
 		 
 	}
 
@@ -63,23 +73,20 @@ class DiseaseController extends Controller {
 		$city = $input['city'];
 		$state = $input['state'];
 		$gender = $input['gender'];
+		$device_id = $input['device_id'];
 
 		$con = DB::table('user')->select('id')->where('contact',$contact)->first();
 
 		if($con != null)
 			return response()->json(['success'=>false ,'message'=> "Already Exists"]); 		
 
-		$cit = DB::table('cities')->select('id')->where('name',$city)->first();
-		$sta = DB::table('state')->select('id')->where('name',$state)->first();
-
-		$city_id = $cit->id;
-		$state_id = $sta->id;
 
 		DB::table('user')->insert(['name' =>  $name,
 										 'gender' => $gender,	
                                          'contact' =>  $contact,
-                                         'city_id' => $city_id,
-                                         'state_id' => $state_id]);
+                                         'city_id' => $city,
+                                         'state_id' => $state,
+                                         'device_id' => $device_id]);
 
 	}
 
@@ -97,6 +104,16 @@ class DiseaseController extends Controller {
 		$cities = DB::table('cities')->select('id','name')->where('state_id',$state_id)->get();
 
 		return  response()->json(['success'=>true ,'message'=> "Success",'data'=> $cities]); 	
+	}
+
+	public function getUserData(Request $request) {
+
+		$input = $request->json()->all();
+		$contact = $input['contact'];
+
+		$userData = DB::table('user')->where('contact',$contact)->first();
+
+		return  response()->json(['success'=>true ,'message'=> "Success",'data'=> $userData]); 
 	}
 
 }

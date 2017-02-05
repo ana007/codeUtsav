@@ -32,6 +32,8 @@ Route::post('/updateDiseaseCount','DiseaseController@insertDisease');
 Route::post('/addUser','DiseaseController@addUser');
 Route::post('/getStates','DiseaseController@getStates');
 Route::post('/getCities','DiseaseController@getCities');
+Route::post('/checkUserDiseaseUpdate','DiseaseController@checkUserDiseaseUpdate');
+Route::post('/getUserData','DiseaseController@getUserData');
 
 Route::get('/user', function (Request $request) {
     return $request->user();
