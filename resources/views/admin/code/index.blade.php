@@ -18,11 +18,11 @@
 
      <style>
         .pagination > .active > span {
-        background-color: #e97005;
-        border-color: #e97005;
+        background-color: #01b0f1;
+        border-color: #01b0f1;
     }
         .pagination > .page-item > a {
-            color: #e97005;
+            color: #01b0f1;
     }
     </style>
 
@@ -39,7 +39,7 @@
             <ul class="list-page-breadcrumb">
                 <li class="active-page"></li>
                 <li><a href="{{ URL::to('admin') }}">Dashboard <i class="zmdi zmdi-chevron-right"></i></a></li>
-                <li class="active-page"><a href="{{ URL::to('admin/disease') }}">Diseases List</a></li>
+                <li class="active-page"><a href="{{ URL::to('admin/disease') }}">Modify Disease</a></li>
             </ul>
         </div>
     </div>

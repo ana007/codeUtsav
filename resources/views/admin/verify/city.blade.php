@@ -18,11 +18,11 @@
 
      <style>
         .pagination > .active > span {
-        background-color: #e97005;
-        border-color: #e97005;
+        background-color: #01b0f1;
+        border-color: #01b0f1;
     }
         .pagination > .page-item > a {
-            color: #e97005;
+            color: #01b0f1;
     }
     </style>
 

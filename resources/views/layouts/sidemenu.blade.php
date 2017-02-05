@@ -37,22 +37,25 @@
         <ul class="list-accordion">
             <li class="list-title"><a ><i class="fa fa-tachometer"></i>DashBoard</a></li>
             <li>
-                <a href="#"><i class="fa fa-pencil-square-o"></i><span class="list-label">Modify Disease</span></a>
+                <a href="#"><i class="fa fa-pencil-square-o"></i><span class="list-label">Disease Data</span></a>
                 <ul>
                    
-                    <li><a href="{{ URL::to('admin/diseases') }}">Diseases List</a></li>
+                    <li><a href="{{ URL::to('admin/diseases') }}">Add/Remove Disease</a></li>
                 </ul>
             </li>
             
             <li>
                 <a href="#"><i class="fa fa-bar-chart"></i><span class="list-label">Rumour Statistics</span></a>
                 <ul>
-                    <li><a href="{{ URL::to('admin/display') }}">Display</a></li>
+                    <li><a href="{{ URL::to('admin/display') }}"><i class="fa fa-list-alt"></i><span class="list-label"> View Rumours
+                    </span>
+                    </a>
+                    </li>
                 </ul>
             </li>
 
             <li>    
-                <a href="{{ URL::to('admin/verify') }}"><i class="fa fa-check"></i><span class="list-label">Verify Rumours</span></a>
+                <a href="{{ URL::to('admin/verify') }}"><i class="fa fa-check   "></i><span class="list-label">Verify Rumours</span></a>
             </li>
           
           
