@@ -55,7 +55,7 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="widget-header">
-                                        <h3>Promo Code List</h3>
+                                        <h3>Disease List</h3>
                                     </div>
                                 </div>
                                 <div class="col-md-6">

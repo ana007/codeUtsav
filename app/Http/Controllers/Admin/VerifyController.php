@@ -41,5 +41,4 @@ class VerifyController extends Controller
            // return $diseasedata;
            return view('admin.verify.city',compact('city_name','diseasedata'));
         }
-
 }

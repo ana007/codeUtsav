@@ -33,6 +33,7 @@
         # Dashboard / Index
             Route::get('/home', array('as' => 'dashboard','uses' => 'Admin\GameController@index'));
 
+
         # Dashboard / Index
             Route::get('/', array('as' => 'dashboard','uses' => 'Admin\GameController@index'));
 
@@ -57,6 +58,6 @@
         Route::get('/verify/state/{id}','Admin\VerifyController@state'); 
         Route::get('/verify/city/{id}','Admin\VerifyController@city');
         Route::get('/update/{id}','Admin\UpdateController@update');
-
+        Route::get('/home/assignTaskCreate', 'Admin\GameController@store');
     });
 

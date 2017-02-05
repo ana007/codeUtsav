@@ -35,7 +35,7 @@
             </div>
         </div>
         <ul class="list-accordion">
-            <li class="list-title"><a ><i class="fa fa-tachometer"></i>DashBoard</a></li>
+            <li class="list-title"><a href="home/"><i class="fa fa-tachometer"></i>DashBoard</a></li>
             <li>
                 <a href="#"><i class="fa fa-pencil-square-o"></i><span class="list-label">Disease Data</span></a>
                 <ul>

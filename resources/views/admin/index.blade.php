@@ -34,7 +34,157 @@
     </div>
 </div>
 
+
+     <div class="row">
+        <div class="col-md-12">
+            <div class="widget-wrap material-table-widget">
+
+                <div class="widget-container margin-top-0">
+                    <div class="widget-content">
+                        <div class="data-action-bar">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="widget-header">
+                                        <h3>Rumours Trending Today</h3>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        
+                        <table class="table foo-data-table-filterable" data-filter="#filter" data-filter-text-only="true" data-page-size="5" data-limit-navigation="3">
+                            <thead>
+                            <tr>
+                                <th data-sort-ignore="true">
+                                    Disease
+                                </th>
+                                
+                                <th data-sort-ignore="true">
+                                    Location
+                                </th>
+                                <th data-sort-ignore="true">
+                                    Disease Count
+                                </th> 
+                                <th data-sort-ignore="true">
+                                    Action
+                                </th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @foreach ($diseasedata as $data)
+                                <tr>
+                                    <td>{{ $data->code }}</td>
+                                    <td>{{$data->name}}</td>
+                                    <td>{{ $data->count}}</td>
+                                    <td>
+                                         @if($data->flag ==1 )
+                                            <img src="../../images/verified.png" width="20px" height="20px">Verified
+                                        @else
+                                            <img src="../../images/unverified.png" width="18px" height="18px">
+
+                                            Not Verified
+                                            @endif
+                                    </td>
+                                </tr>
+                            @endforeach
+                            </tbody>
+                            <tfoot class="hide-if-no-paging">
+                            <tr>
+                                <td colspan="6" class="footable-visible">
+                                    <div class="pagination pagination-centered"></div>
+                                </td>
+                            </tr>
+                            </tfoot>
+                        </table>
+                      
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+           
+            <div class="row">
+        <div class="col-md-12">
+            <div class="widget-wrap material-table-widget">
+
+                <div class="widget-container margin-top-0">
+                    <div class="widget-content">
+                        <div class="data-action-bar">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="widget-header">
+                                        <h3>Assign task to another user</h3>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        
+                        <div class="widget-container">
+        <div class="widget-content">
+            <div class="row">
+                <div class="col-md-12">
+                    
+                    
+                        <div class="form-content">
+                            <div class="row">
+
+
+                                <div class="col-md-12 unit" style="float:left">
+                                    <div class="input">
+                                        <label class="col-md-4" align="right">
+                                            Email*
+                                        </label>
+                                        <div class="col-md-5">
+                                            {!! Form::text('email', null, array('class' => 'form-control', 'placeholder'=>'EMail of Unicef User ', 'style'=>'text-transform:uppercase' , 'required'=>'true')) !!}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 unit">
+                                    <div class="input">
+                                        <label class="col-md-4" align="right">
+                                            Disease Name*
+                                        </label>
+                                        <div class="col-md-5">
+                                            {!! Form::text('description', null, array('class' => 'form-control', 'placeholder'=>'Disease Trending', 'style'=>'text-transform:uppercase' , 'required'=>'true')) !!}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 unit">
+                                    <div class="input">
+                                        <label class="col-md-4" align="right">
+                                            Location*
+                                        </label>
+                                        <div class="col-md-5">
+                                            {!! Form::text('location', null, array('class' => 'form-control', 'placeholder'=>'location name ', 'style'=>'text-transform:uppercase' , 'required'=>'true')) !!}
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-md-12" style="border-top:1px solid #ddd; padding-top:30px;">
+                                    <div class="col-md-5 col-md-offset-3 unit">
+                                        <button type="submit" onClick="assign()" class="btn btn-primary">Assign Task</button> <a href="{{ URL::to('admin/home') }}" class="btn btn-primary">Cancel</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end /.content -->
+                   
+                </div>
+
+            </div>
+        </div>
+    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 @endsection
+
+
 
 @section('script')
 
@@ -84,3 +234,10 @@
 <script src="/js/apps.js"></script>
 
 @endsection
+<script type="text/javascript">
+    function assign()
+    {
+        alert('Task has been assigned !!.')
+        window.location='';
+    }
+</script>>

@@ -11,6 +11,7 @@ class UpdateController extends Controller
 
     	DB::table('spread')->where('id',$id)->update(['flag' => 1]);
 	$city_name = DB::table('cities')->select('id','name')->where('id',$id)->get();
+	
            $diseasedata = DB::table('spread')->join('promo_codes','promo_codes.id','=','spread.disease_id')->select('code','spread.count','spread.id')->where('spread.locality_id',$id)->where('spread.flag','0')->get();
            //$disease_name = DB::table('promo_codes')->select('code')->where('');
            // return $city_name;
