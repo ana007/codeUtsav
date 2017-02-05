@@ -39,7 +39,7 @@
             <ul class="list-page-breadcrumb">
                 <li class="active-page"></li>
                 <li><a href="{{ URL::to('admin') }}">Dashboard <i class="zmdi zmdi-chevron-right"></i></a></li>
-                <li class="active-page"><a href="{{ URL::to('admin/disease') }}">Disease Statistics</a></li>
+                <li class="active-page"><a href="{{ URL::to('admin/disease') }}">Rumour Statistics</a></li>
             </ul>
         </div>
     </div>
@@ -65,7 +65,7 @@
                                 <div class="col-md-6 col-sm-6">
                                     <div class="row">
                                         <div class="col-md-6 col-sm-6">
-                                            <span class="tfh-label">Search Rumours: </span>
+                                            <span class="tfh-label">Search Disease: </span>
                                            {!! Form::open(['method'=>'GET','url'=>URL::to('admin/display/search'),'role'=>'search'])  !!}
  
                                     <input class="form-control" type="text" id="search" name="search" placeholder="Search here">

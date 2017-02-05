@@ -32,7 +32,7 @@
                 <li><span class="left-toggle-switch"><i class="zmdi zmdi-menu"></i></span></li>
                 <li>
                     <div class="logo">
-                        <a title="Admin Template"><p style="font-size: 38px; color: #e97005;">UNICEF</p></a>
+                        <a title="Admin Template"><p style="font-size: 38px; color:#01b0f1;">UNICEF</p></a>
                     </div>
                 </li>
             </ul>

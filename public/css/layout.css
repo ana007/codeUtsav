@@ -211,7 +211,7 @@
     width: 250px;
     padding: 0px 6px;
     background-color: #fff;
-    border-right: 1px solid #e97005;
+    border-right: 1px solid #color: #01b0f1;;
 }
 .topbar .topbar-left .left-branding {
   padding: 0px;
@@ -305,7 +305,7 @@
   display: inline-block;
   line-height: 60px;
   font-size: 24px;
-  color:#e97005;
+  color: #01b0f1;;
 }
 .topbar .topbar-left .left-toggle-switch:hover,
 .topbar .topbar-left .left-toggle-switchfocus {
@@ -1044,21 +1044,21 @@
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.16), 0 2px 10px rgba(0, 0, 0, 0.12);
 }
 .leftbar.material-leftbar .user-profile-container {
-  background: #e97005;
+  background: #color: #01b0f1;;
   /* Old browsers */
-  background: -moz-linear-gradient(45deg, #000 0%, #e97005 100%);
+  background: -moz-linear-gradient(45deg, #000 0%, #color: #01b0f1; 100%);
   /* FF3.6+ */
-  background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, #e97005), color-stop(100%, #e97005));
+  background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, #color: #01b0f1;), color-stop(100%, #color: #01b0f1;));
   /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(45deg, #000 0%, #e97005 100%);
+  background: -webkit-linear-gradient(45deg, #000 0%, #color: #01b0f1; 100%);
   /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(45deg, #000 0%, #e97005 100%);
+  background: -o-linear-gradient(45deg, #000 0%, #color: #01b0f1; 100%);
   /* Opera 11.10+ */
-  background: -ms-linear-gradient(45deg, #000 0%, #e97005 100%);
+  background: -ms-linear-gradient(45deg, #000 0%, #color: #01b0f1; 100%);
   /* IE10+ */
-  background: linear-gradient(45deg, #000 0%, #e97005 100%);
+  background: linear-gradient(45deg, #000 0%, #color: #01b0f1; 100%);
   /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#000', endColorstr='#e97005', GradientType=1);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#000', endColorstr='#color: #01b0f1;', GradientType=1);
   /* IE6-9 fallback on horizontal gradient */
 }
 .leftbar.material-leftbar .user-profile-container .user-profile .admin-user-info {
@@ -1097,7 +1097,7 @@
 }
 .leftbar.material-leftbar .list-accordion li ul li a:hover,
 .leftbar.material-leftbar .list-accordion li ul li a:focus {
-  color: #e97005;
+  color: #color: #01b0f1;;
 }
 .leftbar.material-leftbar .list-accordion > li > a {
   background-color: #fff;
@@ -1105,12 +1105,12 @@
 }
 .leftbar.material-leftbar .list-accordion > li > a.acc-parent.active {
   background-color: rgba(0, 0, 0, 0.05);
-  color: #e97005;
+  color: #color: #01b0f1;;
 }
 .leftbar.material-leftbar .list-accordion > li > a:hover,
 .leftbar.material-leftbar .list-accordion > li > a:focus {
   background-color: rgba(0, 0, 0, 0.05);
-  color: #e97005;
+  color: #color: #01b0f1;;
 }
 .leftbar.material-leftbar .list-accordion > li > a:before {
   background: #ccc;

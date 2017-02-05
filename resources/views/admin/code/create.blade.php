@@ -29,7 +29,7 @@
                 <li class="active-page"></li>
                 <li><a href="{{ URL::to('admin') }}">Dashboard <i class="zmdi zmdi-chevron-right"></i></a></li>
                 <li class="active-page"><a href="{{ URL::to('admin/diseases') }}">Diseases <i class="zmdi zmdi-chevron-right"></i></a></li>
-                <li class="active-page"><a href="{{ URL::to('admin/diseases/create') }}">Add</a></li>
+                <li class="active-page"><a href="{{ URL::to('admin/diseases/create') }}">Add Disease</a></li>
             </ul>
         </div>
     </div>

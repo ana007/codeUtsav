@@ -39,7 +39,7 @@
             <ul class="list-page-breadcrumb">
                 <li class="active-page"></li>
                 <li><a href="{{ URL::to('admin') }}">Dashboard <i class="zmdi zmdi-chevron-right"></i></a></li>
-                <li class="active-page"><a href="{{ URL::to('admin/code') }}">PromoCodes<i class="zmdi zmdi-chevron-right"></i></a></li>
+                <li class="active-page"><a href="{{ URL::to('admin/code') }}">Rumour<i class="zmdi zmdi-chevron-right"></i></a></li>
                 <li class="active-page">Search Results</li>
             </ul>
         </div>

@@ -33,7 +33,7 @@
             <ul class="list-page-breadcrumb">
                 <li class="active-page"></li>
                 <li><a href="{{ URL::to('admin') }}">Dashboard <i class="zmdi zmdi-chevron-right"></i></a></li>
-                <li class="active-page"><a href="{{ URL::to('admin/code') }}">PromoCode <i class="zmdi zmdi-chevron-right"></i></a></li>
+                <li class="active-page"><a href="{{ URL::to('admin/code') }}">Update Disease <i class="zmdi zmdi-chevron-right"></i></a></li>
                 <li class="active-page"><a href="{{ URL::to('admin/code/'.$code->id.'/edit') }}">{{ $code->code }}</a></li>
             </ul>
         </div>
@@ -44,7 +44,7 @@
 <div class="widget-wrap">
     <div class="widget-header block-header clearfix">
         <div class="pull-left">
-            <h3>Edit Promo Code</h3>
+            <h3>Edit Disease</h3>
         </div>
     </div>
     <div class="widget-container">
@@ -56,20 +56,30 @@
 
                         <div class="form-content">
                             <div class="row">
-                                <div class="col-md-12 unit">
+                                <div class="col-md-12 unit" style="float:left">
                                     <div class="input">
-                                        <label class="col-md-3" align="right">
-                                            Diseases *
+                                        <label class="col-md-4" align="right">
+                                            Disease Name *
                                         </label>
                                         <div class="col-md-5">
-                                            {!! Form::text('code', null, array('class' => 'form-control', 'placeholder'=>'Diseases' , 'style'=>'text-transform:uppercase' , 'required'=>'true')) !!}
+                                            {!! Form::text('code', null, array('class' => 'form-control', 'placeholder'=>'Diseases', 'style'=>'text-transform:uppercase' , 'required'=>'true')) !!}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 unit">
+                                    <div class="input">
+                                        <label class="col-md-4" align="right">
+                                            Disease Description*
+                                        </label>
+                                        <div class="col-md-5">
+                                            {!! Form::text('description', null, array('class' => 'form-control', 'placeholder'=>'Description', 'style'=>'text-transform:uppercase' , 'required'=>'true')) !!}
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="col-md-12" style="border-top:1px solid #ddd; padding-top:30px;">
                                     <div class="col-md-5 col-md-offset-3 unit">
-                                        <button type="submit" class="btn btn-primary">Update</button> <a href="{{ URL::to('admin/code') }}" class="btn btn-primary">Cancel</a>
+                                        <button type="submit" class="btn btn-primary">Update</button> <a href="{{ URL::to('admin/diseases') }}" class="btn btn-primary">Cancel</a>
                                     </div>
                                 </div>
                             </div>

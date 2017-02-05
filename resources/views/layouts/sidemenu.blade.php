@@ -37,7 +37,7 @@
         <ul class="list-accordion">
             <li class="list-title"><a ><i class="fa fa-tachometer"></i>DashBoard</a></li>
             <li>
-                <a href="#"><i class="fa fa-bookmark"></i><span class="list-label">Diseases</span></a>
+                <a href="#"><i class="fa fa-pencil-square-o"></i><span class="list-label">Modify Disease</span></a>
                 <ul>
                    
                     <li><a href="{{ URL::to('admin/diseases') }}">Diseases List</a></li>
@@ -45,14 +45,14 @@
             </li>
             
             <li>
-                <a href="#"><i class="fa fa-gamepad"></i><span class="list-label">See Rumours</span></a>
+                <a href="#"><i class="fa fa-bar-chart"></i><span class="list-label">Rumour Statistics</span></a>
                 <ul>
                     <li><a href="{{ URL::to('admin/display') }}">Display</a></li>
                 </ul>
             </li>
 
-            <li>
-                <a href="{{ URL::to('admin/verify') }}"><i class="fa fa-gamepad"></i><span class="list-label">Verify Rumours</span></a>
+            <li>    
+                <a href="{{ URL::to('admin/verify') }}"><i class="fa fa-check"></i><span class="list-label">Verify Rumours</span></a>
             </li>
           
           

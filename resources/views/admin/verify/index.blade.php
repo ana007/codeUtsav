@@ -41,7 +41,7 @@
             <ul class="list-page-breadcrumb">
                 <li class="active-page"></li>
                 <li><a href="{{ URL::to('admin') }}">Dashboard <i class="zmdi zmdi-chevron-right"></i></a></li>
-                <li class="active-page"><a href="{{ URL::to('admin/disease') }}">Verify Disease</a></li>
+                <li class="active-page"><a href="{{ URL::to('admin/disease') }}">Verify Rumour</a></li>
             </ul>
         </div>
     </div>
@@ -59,8 +59,8 @@
                                         <h3>Choose Region</h3>
                                     </div>
                                 </div>
-                                <div class="dropdown col-md-6">
-                                     <select id="state" onchange="getState(this)">
+                                <div class="dropdown col-md-2   ">
+                                     <select id="state" class="form-control" onchange="getState(this)">
                                         
                                         
                                         @if(isset($statename))  
@@ -72,9 +72,9 @@
                                             @endforeach
                                         @endif
                                     </select>
-                                         
-                                      
-                                      <select id="city">
+                                       </div>  
+                                      <div class="dropdown col-md-2">
+                                      <select id="city" class="form-control">
                                         <option >Select City</option>
                                         @if(isset($statename))  
                                         @foreach ($city_name as $value) 
@@ -83,7 +83,7 @@
                                         @endif
                                        </select>     
                                     </div>
-                                <div class="col-md-3">
+                                <div class="col-md-2">
                                     <div class="data-align">
                                         <!-- <a href="#clear" class="clear-filter btn btn-link" title="clear filter">Clear Filter</a> -->
                                         <div class="btn add-row btn-primary" onclick="search()">Search</div>
@@ -92,7 +92,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <!-- <div class="table-filter-header">
                             <div class="row">
                                 <div class="col-md-6 col-sm-6">

@@ -15,13 +15,12 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
 use Image;
 
-public function search(Request $request)
-        {
-           $search = \Request::get('search');
-           $codes = PromoCode::where('code','like','%'.$search.'%')->paginate(5);
+class GameController extends Controller
+{
 
-           return view('admin.code.search',compact('codes'));
-        }
+    public function index(){
+      return view('admin.index');
+    }
 
     
 }

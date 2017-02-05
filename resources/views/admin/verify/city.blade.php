@@ -55,13 +55,7 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="widget-header">
-                                        <h3>Promo Code List</h3>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="data-align-right">
-                                        <!-- <a href="#clear" class="clear-filter btn btn-link" title="clear filter">Clear Filter</a> -->
-                                        <a href="{{ URL::to('admin/code/create') }}" class="btn add-row btn-primary">Add New</a>
+                                        <h3>Rumours yet to be verified!!</h3>
                                     </div>
                                 </div>
                             </div>
